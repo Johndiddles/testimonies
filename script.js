@@ -43,8 +43,10 @@ const data = [
 ]
 
 
-const handleBtn = (testimony) => {
-   document.getElementById('testimony').innerText = testimony
+const handleBtn = (testimony, name) => {
+   document.getElementById('testimony').innerText = testimony;
+   document.getElementById('author').innerText = name;
+   console.log(name)
 }
 
 
@@ -57,7 +59,7 @@ for (let i=0; i<data.length; i++){
     document.getElementById('left').innerHTML += `
     <button 
         id=${data[i].id}
-        onclick='handleBtn(${JSON.stringify(testimonies.testimony)})'
+        onclick='handleBtn(${JSON.stringify(testimonies.testimony)}, ${JSON.stringify(testimonies.name)})'
     >
         ${data[i].name}
     </button>`
